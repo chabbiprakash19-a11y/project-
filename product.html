@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kitchen Appliances | Kitchen Lounge Inc.</title>
+
+    <link rel="stylesheet" href="products.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+    <style>
+        /* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.96);
+     -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: "Montserrat";
+}
+
+.logo span {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.logo strong {
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    color: #bd9148;
+    font-size: 8px;
+    letter-spacing: 4px;
+    margin-top: 3px;
+}
+
+.nav nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav nav a {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.nav nav a:hover {
+    color: #b88940;
+}
+
+.header-whatsapp {
+    background: #202020;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.product-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background:
+        url("images/kitchen-hero.jpg")
+        center/cover no-repeat;
+
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.2)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-small {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #d3ad6b;
+}
+
+.hero h1 {
+    font-family: "Montserrat";
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .95;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: #c59a54;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 17px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 40px;
+    background: #c39a52;
+    font-weight: 600;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    background: #f7f5f0;
+}
+
+.intro-heading {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.intro-heading > span {
+    color: #c39a52;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #b08442;
+    margin-bottom: 12px;
+}
+
+.intro h2 {
+    font-family: "Montserrat";
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.1;
+}
+
+.intro h2 span {
+    color: #b08442;
+}
+
+.intro-text {
+    max-width: 850px;
+    margin: 35px 0 0 55px;
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    margin-bottom: 55px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title h2 {
+    font-family: "Montserrat";
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.1;
+}
+
+.section-title > p:last-child {
+    color: #777;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    background: #fff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: #f7f5f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    height: 320px;
+    transition: .5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+.number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+    color: #222;
+
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+.product-content {
+    padding: 30px;
+}
+
+.product-content h3 {
+    font-family: "Montserrat";
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.product-content h4 {
+    font-family: "Montserrat";
+    color: #b18443;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.product-content p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 20px 0;
+}
+
+.brands span {
+    background: #fff;
+    border: 1px solid #e4dfd4;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.enquire {
+    display: inline-block;
+    margin-top: 10px;
+    color: #a67835;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+
+/* =========================
+   WHY
+========================= */
+
+.why {
+    background: #202020;
+    color: #fff;
+}
+
+.why .label {
+    color: #c39a52;
+}
+
+.why h2 span {
+    color: #c39a52;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 50px;
+}
+
+.why-grid > div {
+    padding: 30px;
+    border-left: 1px solid #444;
+}
+
+.why-grid > div:first-child {
+    border-left: none;
+}
+
+.why-grid span {
+    color: #c39a52;
+    font-weight: 700;
+}
+
+.why-grid h3 {
+    font-family: "Montserrat";
+    margin: 20px 0 10px;
+}
+
+.why-grid p {
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+/* =========================
+   BRANDS
+========================= */
+
+.brands-section {
+    background: #f7f5f0;
+}
+
+.brands-section h2 span {
+    color: #b18443;
+}
+
+.brand-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.brand-list span {
+    padding: 25px 10px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    background:
+        linear-gradient(
+            rgba(0,0,0,.83),
+            rgba(0,0,0,.83)
+        ),
+        url("images/kitchen-hero.jpg")
+        center/cover;
+
+    text-align: center;
+    color: white;
+}
+
+.cta > .container > p {
+    color: #c39a52;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.cta h2 {
+    font-family: "Montserrat";
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.cta > .container > span {
+    display: block;
+    color: #aaa;
+    max-width: 650px;
+    margin: auto;
+}
+
+.cta-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.call,
+.whatsapp {
+    padding: 14px 25px;
+    border-radius: 40px;
+    font-weight: 600;
+}
+
+.call {
+    background: white;
+    color: #222;
+}
+
+.whatsapp {
+    border: 1px solid white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #151515;
+    color: white;
+}
+
+.footer-content {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-content h3 {
+    font-family: "Montserrat";
+}
+
+.footer-content h3 span {
+    color: #c39a52;
+}
+
+.footer-content p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.footer-content a {
+    display: block;
+    color: #aaa;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.copyright {
+    border-top: 1px solid #292929;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 11px;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.floating-whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    background: #198754;
+    color: white;
+
+    padding: 13px 18px;
+    border-radius: 40px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,.2);
+
+    z-index: 999;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width: 900px) {
+
+    .nav nav {
+        display:none;
+    }
+     
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid > div:nth-child(3) {
+        border-left: none;
+    }
+
+    .brand-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+      .menu-toggle {
+        display: block;
+    }
+
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 600px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .header-whatsapp {
+        display: none;
+    }
+
+    .product-hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .intro-heading {
+        gap: 15px;
+    }
+
+    .intro-text {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .product-image img {
+        height: 250px;
+    }
+
+    .product-content {
+        padding: 22px;
+    }
+
+    .product-content h3 {
+        font-size: 23px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid > div {
+        border-left: none;
+        border-bottom: 1px solid #444;
+    }
+
+    .brand-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-list span {
+        font-size: 11px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-whatsapp {
+        right: 15px;
+        bottom: 15px;
+    }  
+    .menu-toggle {
+        display: block;
+    }
+}
+    </style>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+
+            <span>KITCHEN</span>
+
+            <strong>LOUNGE</strong>
+
+            <small>INC.</small>
+
+        </a>
+
+
+         <nav>
+         <a href="index.html">Home</a>
+
+            <a href="#kitchen">Products</a>
+
+            <a href="#brands">Brands</a>
+
+            <a href="#contact">Contact</a>
+
+         </nav>
+           
+       
+        <a
+    
+            href="https://wa.me/919742230507"
+            target="_blank"rel="noopener"
+            class="header-whatsapp">
+
+            WhatsApp Us
+
+        </a>
+    
+        
+            
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="product-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <span class="hero-small">
+            KITCHEN LOUNGE INC. · PRODUCT COLLECTION
+        </span>
+
+        <h1>
+            Kitchen
+            <span>Appliances</span>
+        </h1>
+
+        <p>
+            From everyday cooking essentials to premium built-in
+            appliances, Kitchen Lounge brings leading brands
+            together under one platform.
+        </p>
+
+        <a href="#kitchen" class="hero-btn">
+            Explore Products ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="intro-heading">
+
+            <span>08.1</span>
+
+            <div>
+
+                <p class="label">
+                    KITCHEN APPLIANCES
+                </p>
+
+                <h2>
+                    Designed Around
+                    <span>Your Kitchen.</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <p class="intro-text">
+
+            Kitchen Lounge stocks the full spread of kitchen
+            appliances — from everyday performers to premium
+            European names — matched to your cooking needs,
+            kitchen size, cabinetry and lifestyle, not simply
+            what's in stock.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products" id="kitchen">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <p class="label">
+                OUR COLLECTION
+            </p>
+
+            <h2>
+                Kitchen Products
+            </h2>
+
+            <p>
+                Choose the right appliance for your kitchen,
+                with guidance from our team.
+            </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- CHIMNEY -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/chimney.jpg"
+                        alt="Kitchen Chimney">
+
+                    <span class="number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Chimney
+                    </h3>
+
+                    <h4>
+                        Wall Mounted · Island Hood · Ceiling Hood
+                    </h4>
+
+                    <p>
+
+                        A chimney is one of the biggest factors
+                        in whether a kitchen stays comfortable
+                        during Indian cooking.
+
+                    </p>
+
+                    <p>
+
+                        Wall-mounted suits most modular layouts,
+                        island hoods are designed for open-kitchen
+                        islands, while ceiling hoods disappear
+                        into a false ceiling.
+
+                    </p>
+
+
+                    <div class="brands">
+
+                        <span>Bosch</span>
+                        <span>Siemens</span>
+                        <span>Hafele</span>
+                        <span>Faber</span>
+                        <span>KAFF</span>
+                        <span>Electrolux</span>
+                        <span>Beyond</span>
+                        <span>Asko</span>
+                        <span>Falmec</span>
+                        <span>Smeg</span>
+                        <span>Gaggenau</span>
+                        <span>Bora</span>
+                        <span>Miele</span>
+
+                    </div>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Kitchen%20Chimneys."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HOBS -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/hob.jpg"
+                        alt="Built-in Hob">
+
+                    <span class="number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Built-in Hobs & Hob Tops
+                    </h3>
+
+                    <h4>
+                        2 / 3 / 4 / 5 Burner
+                    </h4>
+
+                    <p>
+
+                        Burner count is a space-and-household-size
+                        decision more than a features decision.
+
+                    </p>
+
+                    <p>
+
+                        A 2-burner suits a compact kitchen or
+                        second preparation station, while a
+                        5-burner is suited for families who cook
+                        in volume.
+
+                    </p>
+
+                    <p>
+
+                        All hobs can be matched to your chimney
+                        and cabinetry so the finished kitchen
+                        reads as one considered space.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Built-in%20Hobs."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- OVEN -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/oven.jpg"
+                        alt="Built-in Oven">
+
+                    <span class="number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Built-in Oven
+                    </h3>
+
+                    <h4>
+                        Oven · Steam · Combi
+                    </h4>
+
+                    <p>
+
+                        From straightforward built-in ovens to
+                        steam and combi units that bake, steam
+                        and grill in one footprint.
+
+                    </p>
+
+                    <p>
+
+                        This category covers everything from an
+                        occasional baker's kitchen to a genuinely
+                        oven-led cooking space.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Built-in%20Ovens."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- MICROWAVE -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/microwave.jpg"
+                        alt="Built-in Microwave">
+
+                    <span class="number">
+                        04
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Built-in Microwave
+                    </h3>
+
+                    <h4>
+                        MWO
+                    </h4>
+
+                    <p>
+
+                        A built-in MWO frees up counter space and
+                        keeps your kitchen's sightlines clean.
+
+                    </p>
+
+                    <p>
+
+                        Installed at a height that suits how your
+                        household actually uses it, rather than
+                        simply wherever there is a gap.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Built-in%20Microwave."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- DISHWASHER -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/dishwasher.jpg"
+                        alt="Built-in Dishwasher">
+
+                    <span class="number">
+                        05
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Built-in Dishwasher
+                    </h3>
+
+                    <h4>
+                        Fully Integrated · Semi Integrated
+                    </h4>
+
+                    <p>
+
+                        Fully integrated units hide completely
+                        behind a cabinet-matched panel.
+
+                    </p>
+
+                    <p>
+
+                        Semi-integrated models keep the control
+                        panel visible for quick-glance use.
+
+                    </p>
+
+                    <p>
+
+                        Both options can be sized and plumbed to
+                        fit your existing kitchen layout.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Built-in%20Dishwashers."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- INDUCTION -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/induction.jpg"
+                        alt="Built-in Induction">
+
+                    <span class="number">
+                        06
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Built-in Induction
+                    </h3>
+
+                    <h4>
+                        2 Zone · 4 Zone
+                    </h4>
+
+                    <p>
+
+                        A 2-zone induction hob suits a compact
+                        or secondary cooking station.
+
+                    </p>
+
+                    <p>
+
+                        A 4-zone model is suited for a primary
+                        cooktop replacement.
+
+                    </p>
+
+                    <p>
+
+                        Faster, cooler-running and easier to clean
+                        than gas, induction is a common upgrade
+                        during kitchen renovations.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Built-in%20Induction."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- REFRIGERATOR -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/refrigerator.jpg"
+                        alt="Built-in Refrigerator">
+
+                    <span class="number">
+                        07
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Built-in Refrigerator
+                    </h3>
+
+                    <h4>
+                        Solo Refrigerator · Solo Freezer ·
+                        Refrigerator / Freezer Combo
+                    </h4>
+
+                    <p>
+
+                        Built-in refrigeration keeps your kitchen
+                        cabinetry line visually unbroken.
+
+                    </p>
+
+                    <p>
+
+                        Choose dedicated refrigerator or freezer
+                        units, or combination units where one
+                        built-in footprint needs to do both jobs.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Built-in%20Refrigerators."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- WATER PURIFIER -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/water-purifier.jpg"
+                        alt="Water Purifier">
+
+                    <span class="number">
+                        08
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Water Purifiers
+                    </h3>
+
+                    <h4>
+                        Wall-Mounted RO · UV & UF ·
+                        Under-Sink RO · Under-Sink UF
+                    </h4>
+
+                    <p>
+
+                        Bengaluru's water source varies block by
+                        block — some areas rely on relatively soft
+                        BWSSB/Cauvery supply, while others depend
+                        on harder borewell water.
+
+                    </p>
+
+                    <p>
+
+                        The right purifier therefore depends on
+                        your actual water source rather than a
+                        one-size-fits-all RO recommendation.
+
+                    </p>
+
+
+                    <div class="brands">
+
+                        <span>AO Smith</span>
+                        <span>Aquaguard</span>
+                        <span>Havells</span>
+                        <span>Zero B</span>
+                        <span>Faber</span>
+
+                    </div>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Water%20Purifiers."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SINK -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/sink.jpg"
+                        alt="Kitchen Sink">
+
+                    <span class="number">
+                        09
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Kitchen Sinks
+                    </h3>
+
+                    <h4>
+                        Single / Double Bowl · Quartz & SS ·
+                        With / Without Drainboard
+                    </h4>
+
+                    <p>
+
+                        The sink is one of the most-used fixtures
+                        in any kitchen.
+
+                    </p>
+
+                    <p>
+
+                        Quartz composite sinks can offer strong
+                        resistance to scratching and staining,
+                        while stainless steel remains a practical
+                        and budget-friendly standard.
+
+                    </p>
+
+                    <p>
+
+                        Single or double bowl, with or without an
+                        integrated drainboard, can be chosen to
+                        match your counter depth and cooking style.
+
+                    </p>
+
+
+                    <div class="brands">
+
+                        <span>Franke</span>
+                        <span>Carysil</span>
+                        <span>Hafele</span>
+                        <span>Reginox</span>
+                        <span>Schock</span>
+                        <span>Nirali</span>
+
+                    </div>
+
+
+                    <a
+                        href="https://wa.me/919742230507?text=Hello%20Kitchen%20Lounge,%20I%20am%20interested%20in%20Kitchen%20Sinks."
+                        target="_blank"rel="noopener"
+                        class="enquire">
+
+                        Enquire Now →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WHY CHOOSE ================= -->
+
+<section class="why">
+
+    <div class="container">
+
+        <div class="section-title center">
+
+            <p class="label">
+                WHY KITCHEN LOUNGE
+            </p>
+
+            <h2>
+                We Match Appliances
+                <span>to Your Kitchen.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <div>
+
+                <span>01</span>
+
+                <h3>
+                    Kitchen Size
+                </h3>
+
+                <p>
+                    Product selection based on your available
+                    kitchen space and layout.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>02</span>
+
+                <h3>
+                    Cooking Style
+                </h3>
+
+                <p>
+                    Appliances matched to how your household
+                    actually cooks.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>03</span>
+
+                <h3>
+                    Cabinetry
+                </h3>
+
+                <p>
+                    Built-in appliances coordinated with your
+                    cabinetry and kitchen design.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>04</span>
+
+                <h3>
+                    Right Brand
+                </h3>
+
+                <p>
+                    Compare options across 60+ brands under one
+                    platform.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BRANDS ================= -->
+
+<section class="brands-section" id="brands">
+
+    <div class="container">
+
+        <div class="section-title center">
+
+            <p class="label">
+                BRANDS
+            </p>
+
+            <h2>
+                Leading Brands Under
+                <span>One Platform.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="brand-list">
+
+            <span>BOSCH</span>
+            <span>SIEMENS</span>
+            <span>HAFELE</span>
+            <span>FABER</span>
+            <span>KAFF</span>
+            <span>ELECTROLUX</span>
+            <span>SMEG</span>
+            <span>GAGGENAU</span>
+            <span>BORA</span>
+            <span>MIELE</span>
+            <span>AO SMITH</span>
+            <span>AQUAGUARD</span>
+            <span>HAVELLS</span>
+            <span>FRANKE</span>
+            <span>CARYSIL</span>
+            <span>REGINOX</span>
+            <span>SCHOCK</span>
+            <span>NIRALI</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="contact">
+
+    <div class="container">
+
+        <p>
+            HAVE A KITCHEN REQUIREMENT?
+        </p>
+
+        <h2>
+            Let's Find the Right
+            Appliance for You.
+        </h2>
+
+        <span>
+            Talk to our team about your kitchen size,
+            cooking style, cabinetry and preferred brands.
+        </span>
+
+
+        <div class="cta-buttons">
+
+            <a
+                href="tel:+919742230507"
+                class="call">
+
+                Call 97422 30507
+
+            </a>
+
+
+            <a
+                href="https://wa.me/919742230507"
+                target="_blank"rel="noopener"
+                class="whatsapp">
+
+                WhatsApp Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <h3>
+                KITCHEN LOUNGE <span>INC.</span>
+            </h3>
+
+            <p>
+                Top Brands. Under One Platform.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                283, 2nd Main Rd, near Balaji Medicals,
+                Vrushabhavathi Nagar, BEML Layout,
+                Basaveshwar Nagar, Bengaluru,
+                Karnataka 560079
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <a href="tel:+919742230507">
+                +91 97422 30507
+            </a>
+
+            <a href="mailto:kitchenlounge.inc@gmail.com">
+                kitchenlounge.inc@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © <span id="year"></span>
+        Kitchen Lounge Inc. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+    href="https://wa.me/919742230507"
+    target="_blank"rel="noopener"
+    class="floating-whatsapp">
+
+    WhatsApp
+
+</a>
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

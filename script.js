@@ -1,90 +1,91 @@
-/* =====================================
-   MOBILE MENU
-===================================== */
-
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
-
-menuToggle.addEventListener("click", () => {
-
-    navMenu.classList.toggle("active");
-
-});
-
-
-/* Close menu when clicking a link */
-
-const navLinks = document.querySelectorAll(".nav-menu a");
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navMenu.classList.remove("active");
-
-    });
-
-});
-
-
-/* =====================================
-   HEADER SCROLL EFFECT
-===================================== */
+// ================================
+// HEADER SCROLL EFFECT
+// ================================
 
 const header = document.getElementById("header");
 
 window.addEventListener("scroll", () => {
 
     if (window.scrollY > 50) {
-
-        header.style.boxShadow =
-            "0 5px 25px rgba(0,0,0,0.08)";
-
+        header.classList.add("scrolled");
     } else {
-
-        header.style.boxShadow = "none";
-
+        header.classList.remove("scrolled");
     }
 
 });
 
 
-/* =====================================
-   WHATSAPP CONTACT FORM
-===================================== */
+// ================================
+// MOBILE MENU
+// ================================
+
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+
+    navbar.classList.toggle("active");
+
+});
+
+
+// Close mobile menu after clicking a link
+
+const navLinks = document.querySelectorAll(".navbar a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navbar.classList.remove("active");
+
+    });
+
+});
+
+
+// ================================
+// CURRENT YEAR
+// ================================
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+// ================================
+// CONTACT FORM → WHATSAPP
+// ================================
 
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", function (e) {
+contactForm.addEventListener("submit", function(event) {
 
-    e.preventDefault();
+    event.preventDefault();
 
     const name =
-        document.getElementById("name").value;
+        document.getElementById("name").value.trim();
 
     const phone =
-        document.getElementById("phone").value;
+        document.getElementById("phone").value.trim();
 
-    const email =
-        document.getElementById("email").value;
-
-    const enquiry =
-        document.getElementById("enquiry").value;
+    const requirement =
+        document.getElementById("requirement").value;
 
     const message =
-        document.getElementById("message").value;
+        document.getElementById("message").value.trim();
+
+
+    const whatsappNumber = "919742230507";
 
 
     const whatsappMessage =
-        `Hello Kitchen Lounge,
+        `Hello Kitchen Lounge Inc.,
 
 Name: ${name}
 
-Phone / WhatsApp: ${phone}
+Phone: ${phone}
 
-Email: ${email}
-
-Enquiry Type: ${enquiry}
+Requirement: ${requirement}
 
 Message:
 ${message}
@@ -93,53 +94,9 @@ I would like to know more about your products/services.`;
 
 
     const whatsappURL =
-        "https://wa.me/919742230507?text=" +
-        encodeURIComponent(whatsappMessage);
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
-});
-
-
-/* =====================================
-   SCROLL REVEAL
-===================================== */
-
-const revealElements = document.querySelectorAll(
-    ".value-card, .product-card, .solution-card, .review-card, .process-card"
-);
-
-const observer = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-
-revealElements.forEach(element => {
-
-    element.style.opacity = "0";
-    element.style.transform = "translateY(25px)";
-    element.style.transition = "opacity 0.7s ease, transform 0.7s ease";
-
-    observer.observe(element);
+    window.open(whatsappURL, "_blank");
 
 });

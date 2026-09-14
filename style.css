@@ -1,6 +1,6 @@
-/* ================================
+/* =========================
    RESET
-================================ */
+========================= */
 
 * {
     margin: 0;
@@ -13,16 +13,16 @@ html {
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
-    color: #202020;
-    background: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.7;
 }
 
 img {
     width: 100%;
     display: block;
+    object-fit: cover;
 }
 
 a {
@@ -34,68 +34,107 @@ button,
 input,
 textarea,
 select {
-    font: inherit;
+    font-family: inherit;
 }
+
+
+/* =========================
+   GLOBAL
+========================= */
 
 .container {
     width: min(1180px, 92%);
     margin: auto;
 }
 
+section {
+    padding: 100px 0;
+}
 
-/* ================================
-   COMMON
-================================ */
-
-.eyebrow {
-    display: inline-block;
-    color: #a27a3b;
+.section-label {
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    opacity: .65;
 }
 
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 50px;
-    margin-bottom: 55px;
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Montserrat", sans-serif;
 }
 
-.section-heading.center {
-    display: block;
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 55px;
+h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
 }
 
-.section-heading h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(38px, 5vw, 64px);
-    line-height: 1.08;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 25px;
+    border-radius: 50px;
     font-weight: 600;
+    transition: .3s ease;
+    border: 1px solid transparent;
 }
 
-.section-heading h2 span,
-.about-content h2 span,
-.projects-content h2 span,
-.founder-content h2 span,
-.contact-info h2 span,
-.trade-section h2 span {
-    color: #a27a3b;
+.btn-primary {
+    background: #c39a52;
+    color: #fff;
 }
 
-.section-heading p {
-    max-width: 470px;
-    color: #777;
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: #a9803e;
+}
+
+.btn-dark {
+    background: #202020;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border-color: rgba(255,255,255,.7);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #222;
+}
+
+.btn-light {
+    background: #fff;
+    color: #222;
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-light:hover {
+    background: #fff;
+    color: #222;
+}
+
+.full-width {
+    width: 100%;
 }
 
 
-/* ================================
+/* =========================
    HEADER
-================================ */
+========================= */
 
 .header {
     position: fixed;
@@ -103,13 +142,18 @@ select {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid #eeeeee;
-    transition: 0.3s;
+    padding: 17px 0;
+    background: rgba(255,255,255,.96);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    transition: .3s ease;
+}
+
+.header.scrolled {
+    box-shadow: 0 5px 30px rgba(0,0,0,.1);
 }
 
 .nav-container {
-    min-height: 82px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -120,44 +164,40 @@ select {
     display: flex;
     flex-direction: column;
     line-height: 1;
-    min-width: 130px;
+    font-family: "Montserrat", sans-serif;
 }
 
-.logo-main {
-     font-family: "Montserrat";
-    font-size: 25px;
-    font-weight: 800;
+.logo span {
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.logo strong {
+    font-size: 21px;
     letter-spacing: 2px;
 }
 
-.logo-sub {
- font-family: "Montserrat";
-    color: #a27a3b;
-    font-size: 14px;
-    letter-spacing: 4px;
-    margin-top: 4px;
-}
 .logo small {
-      font-family: "Playfair Display", serif;
     font-size: 8px;
     letter-spacing: 4px;
-    margin-top: 6px;
+    color: #b58c47;
+    margin-top: 3px;
 }
 
-.nav-menu {
+.navbar {
     display: flex;
+    gap: 23px;
     align-items: center;
-    gap: 25px;
 }
 
-.nav-menu a {
+.navbar a {
     font-size: 13px;
-    font-weight: 600;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: .3s;
 }
 
-.nav-menu a:hover {
-    color: #a27a3b;
+.navbar a:hover {
+    color: #b58c47;
 }
 
 .nav-actions {
@@ -167,10 +207,10 @@ select {
 
 .call-btn,
 .whatsapp-btn {
-    padding: 10px 15px;
+    padding: 9px 15px;
     border-radius: 30px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .call-btn {
@@ -178,40 +218,32 @@ select {
 }
 
 .whatsapp-btn {
-    color: white;
     background: #222;
+    color: #fff;
 }
 
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    width: 25px;
+    font-size: 27px;
     cursor: pointer;
 }
 
-.menu-toggle span {
-    display: block;
-    height: 2px;
-    background: #222;
-    margin: 6px 0;
-}
 
-
-/* ================================
+/* =========================
    HERO
-================================ */
+========================= */
 
 .hero {
-    min-height: 760px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     background:
         url("../images/hero.jpg")
         center/cover no-repeat;
-    color: white;
-    padding-top: 82px;
+    color: #fff;
 }
 
 .hero-overlay {
@@ -220,234 +252,209 @@ select {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.82),
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.2)
+            rgba(0,0,0,.8),
+            rgba(0,0,0,.4),
+            rgba(0,0,0,.15)
         );
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 80px 0;
+    padding-top: 70px;
+    max-width: 900px;
 }
 
-.hero .eyebrow {
-    color: #d4ae70;
+.eyebrow {
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(50px, 7vw, 92px);
-    line-height: 0.98;
-    max-width: 850px;
-    margin-bottom: 28px;
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 1;
+    max-width: 900px;
 }
 
 .hero h1 span {
-    color: #d3ad6f;
+    display: block;
+    color: #d2ab68;
 }
 
-.hero p {
-    max-width: 650px;
-    font-size: 18px;
-    color: #eeeeee;
-    margin-bottom: 35px;
+.hero-text {
+    max-width: 680px;
+    font-size: 17px;
+    margin: 30px 0;
+    color: rgba(255,255,255,.85);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 15px 25px;
-    border-radius: 3px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    color: white;
-    background: #a27a3b;
-}
-
-.btn-primary:hover {
-    background: #8a642f;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    color: white;
-    border: 1px solid rgba(255,255,255,0.7);
-}
-
-.btn-outline:hover {
-    background: white;
-    color: #222;
-}
-
-.hero-bottom {
+.hero-stats {
     display: flex;
-    gap: 50px;
-    margin-top: 75px;
+    gap: 60px;
+    margin-top: 65px;
 }
 
-.hero-bottom div {
+.hero-stats div {
     display: flex;
     flex-direction: column;
 }
 
-.hero-bottom strong {
-    font-size: 25px;
+.hero-stats strong {
+    font-size: 30px;
+    font-family: "Montserrat";
 }
 
-.hero-bottom span {
+.hero-stats span {
     font-size: 12px;
-    color: #ccc;
+    opacity: .7;
 }
 
 
-/* ================================
-   VALUE
-================================ */
+/* =========================
+   CORE VALUE
+========================= */
 
-.value-section {
-    padding: 110px 0;
+.core-value {
+    text-align: center;
+    background: #f7f5f0;
+}
+
+.core-value h2 {
+    max-width: 850px;
+    margin: auto;
+}
+
+.core-value h2 span {
+    color: #b58c47;
 }
 
 .value-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 55px;
 }
 
 .value-card {
-    position: relative;
-    padding: 40px 25px;
-    border-right: 1px solid #ddd;
+    background: #fff;
+    padding: 35px;
+    text-align: left;
+    border-radius: 18px;
+    transition: .3s;
 }
 
-.value-card:last-child {
-    border-right: none;
-}
-
-.value-number {
-    color: #aaa;
-    font-size: 12px;
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
 }
 
 .value-icon {
-    font-size: 25px;
-    color: #a27a3b;
-    margin: 20px 0;
+    color: #b58c47;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
 .value-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .value-card p {
     color: #777;
-    font-size: 14px;
 }
 
 
-/* ================================
+/* =========================
    PRODUCTS
-================================ */
+========================= */
 
-.products-section {
-    padding: 110px 0;
-    background: #f7f6f3;
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: end;
+    margin-bottom: 50px;
+}
+
+.section-heading > p {
+    max-width: 450px;
+    color: #777;
+}
+
+.section-heading.center {
+    display: block;
+    text-align: center;
+}
+
+.section-heading.center > p {
+    margin: 15px auto 0;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .product-card {
-    position: relative;
-    min-height: 420px;
+    border-radius: 18px;
     overflow: hidden;
-    background: #111;
-    color: white;
+    background: #f5f3ef;
+    transition: .4s;
 }
 
-.product-card.large {
-    grid-row: span 2;
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.12);
 }
 
-.product-image {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: 0.6s;
+.product-card img {
+    height: 300px;
+    transition: .5s;
 }
 
-.product-card:hover .product-image {
-    transform: scale(1.06);
+.product-card:hover img {
+    transform: scale(1.05);
 }
 
-.product-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            transparent 20%,
-            rgba(0,0,0,0.85)
-        );
+.product-card-content {
+    padding: 25px;
 }
 
-.product-content {
-    position: absolute;
-    z-index: 2;
-    bottom: 0;
-    padding: 35px;
+.product-card-content span {
+    color: #b58c47;
+    font-weight: 700;
 }
 
-.product-content > span {
-    color: #d3ad6f;
-    font-size: 12px;
+.product-card-content h3 {
+    margin: 10px 0;
 }
 
-.product-content h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 32px;
-    margin: 8px 0;
-}
-
-.product-content p {
-    color: #ddd;
+.product-card-content p {
+    color: #777;
     font-size: 14px;
-    max-width: 550px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-.product-content strong {
-    font-size: 12px;
-    color: #d3ad6f;
+.product-card-content a {
+    font-size: 13px;
+    font-weight: 600;
 }
 
 
-/* ================================
+/* =========================
    ABOUT
-================================ */
+========================= */
 
 .about-section {
-    padding: 120px 0;
+    background: #202020;
+    color: #fff;
 }
 
 .about-grid {
@@ -462,511 +469,429 @@ select {
 }
 
 .about-image img {
-    height: 620px;
-    object-fit: cover;
+    height: 600px;
+    border-radius: 20px;
 }
 
 .experience-box {
     position: absolute;
-    right: -25px;
+    right: -20px;
     bottom: 30px;
-    width: 145px;
-    height: 145px;
-    background: #a27a3b;
-    color: white;
+    background: #c39a52;
+    padding: 25px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.experience-box strong {
-    font-size: 13px;
+    color: #fff;
 }
 
 .experience-box span {
-    font-family: "Playfair Display", serif;
-    font-size: 45px;
+    font-size: 35px;
+    font-weight: 700;
 }
 
 .about-content h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(40px, 5vw, 65px);
-    line-height: 1.05;
     margin-bottom: 25px;
 }
 
-.about-content > p {
-    color: #666;
-    margin-bottom: 17px;
+.about-content p {
+    color: #bbb;
+    margin-bottom: 18px;
 }
 
-.about-points {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 30px 0;
-    gap: 12px;
-}
-
-.about-points div {
-    display: flex;
-    gap: 10px;
-}
-
-.about-points span {
-    color: #a27a3b;
-    font-weight: bold;
-}
-
-.about-points p {
-    font-size: 13px;
-}
-
-.text-link {
-    color: #a27a3b;
-    font-weight: 700;
-    font-size: 13px;
+.about-content .section-label {
+    color: #c39a52;
 }
 
 
-/* ================================
-   PROCESS
-================================ */
-
-.process-section {
-    padding: 110px 0;
-    background: #1d1d1b;
-    color: white;
-}
-
-.process-section .section-heading p {
-    color: #aaa;
-}
-
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.process-card {
-    padding: 35px 25px;
-    border: 1px solid #3d3d3a;
-    min-height: 230px;
-}
-
-.process-card span {
-    color: #c49b5a;
-    font-size: 12px;
-}
-
-.process-card h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 28px;
-    margin: 30px 0 12px;
-}
-
-.process-card p {
-    color: #aaa;
-    font-size: 14px;
-}
-
-
-/* ================================
-   TRADE
-================================ */
-
-.trade-section {
-    padding: 110px 0;
-    background: #a27a3b;
-    color: white;
-}
-
-.trade-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
-    align-items: center;
-}
-
-.trade-section .eyebrow {
-    color: #f0d29e;
-}
-
-.trade-section h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(40px, 5vw, 65px);
-    line-height: 1.05;
-    margin-bottom: 25px;
-}
-
-.trade-section h2 span {
-    color: white;
-}
-
-.trade-section p {
-    max-width: 600px;
-    margin-bottom: 30px;
-}
-
-.btn-light {
-    background: white;
-    color: #222;
-}
-
-.btn-light:hover {
-    transform: translateY(-2px);
-}
-
-.trade-features {
-    border-top: 1px solid rgba(255,255,255,0.4);
-}
-
-.trade-features div {
-    display: flex;
-    gap: 25px;
-    padding: 22px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
-}
-
-.trade-features strong {
-    font-size: 12px;
-}
-
-.trade-features span {
-    font-size: 15px;
-}
-
-
-/* ================================
+/* =========================
    SOLUTIONS
-================================ */
+========================= */
 
 .solutions-section {
-    padding: 110px 0;
+    background: #f7f5f0;
 }
 
-.solutions-grid {
+.solution-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .solution-card {
+    background: #fff;
     padding: 35px;
-    min-height: 300px;
-    border: 1px solid #ddd;
-    transition: 0.3s;
+    min-height: 280px;
+    border-radius: 18px;
+    transition: .3s;
 }
 
 .solution-card:hover {
-    background: #1d1d1b;
-    color: white;
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 }
 
 .solution-number {
-    color: #a27a3b;
-    font-size: 12px;
+    color: #c39a52;
+    font-weight: 700;
 }
 
 .solution-card h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 28px;
-    margin: 45px 0 15px;
+    margin: 20px 0 12px;
 }
 
 .solution-card p {
     color: #777;
     font-size: 14px;
-    margin-bottom: 25px;
 }
 
-.solution-card:hover p {
-    color: #bbb;
-}
-
-.solution-card span {
-    color: #a27a3b;
-    font-size: 12px;
-    font-weight: bold;
+.solution-card a {
+    display: block;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 
-/* ================================
-   BRANDS
-================================ */
+/* =========================
+   PROCESS
+========================= */
 
-.brands-section {
-    padding: 110px 0;
-    background: #f7f6f3;
+.process-section {
+    background: #fff;
 }
 
-.brand-list {
+.process-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border-top: 1px solid #ddd;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 55px;
+}
+
+.process-item {
+    padding: 30px;
     border-left: 1px solid #ddd;
 }
 
-.brand-list div {
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
+.process-item:first-child {
+    border-left: none;
+}
+
+.process-item span {
+    color: #b58c47;
     font-weight: 700;
-    color: #555;
-    letter-spacing: 1px;
 }
 
-.brand-button {
-    margin-top: 35px;
+.process-item h3 {
+    margin: 18px 0 10px;
 }
 
-
-/* ================================
-   FOUNDER
-================================ */
-
-.founder-section {
-    padding: 120px 0;
-}
-
-.founder-grid {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 90px;
-    align-items: center;
-}
-
-.founder-photo img {
-    height: 570px;
-    object-fit: cover;
-}
-
-.founder-content h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(40px, 5vw, 60px);
-    line-height: 1.05;
-    margin-bottom: 25px;
-}
-
-.founder-content > p {
-    color: #666;
-    margin-bottom: 15px;
-}
-
-blockquote {
-    border-left: 3px solid #a27a3b;
-    padding-left: 25px;
-    margin: 30px 0;
-    font-family: "Playfair Display", serif;
-    font-size: 21px;
-    color: #444;
-}
-
-.founder-name {
-    display: block;
-}
-
-.founder-role {
-    font-size: 12px;
-    color: #888;
+.process-item p {
+    color: #777;
+    font-size: 14px;
 }
 
 
-/* ================================
-   PROJECTS
-================================ */
+/* =========================
+   TRADE
+========================= */
 
-.projects-section {
-    padding: 110px 0;
-    background: #f7f6f3;
+.trade-section {
+    background: #c39a52;
+    color: #fff;
 }
 
-.projects-grid {
+.trade-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
 }
 
-.projects-content h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(40px, 5vw, 60px);
-    line-height: 1.05;
-    margin-bottom: 25px;
+.trade-section p {
+    margin: 20px 0;
+    color: rgba(255,255,255,.85);
 }
 
-.projects-content p {
-    color: #666;
-    margin-bottom: 30px;
+.trade-section .section-label {
+    color: #fff;
 }
 
-.projects-image img {
+.trade-list {
+    display: grid;
+    gap: 10px;
+}
+
+.trade-list div {
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 12px;
+}
+
+.trade-list strong {
+    display: block;
+}
+
+.trade-list span {
+    font-size: 13px;
+    opacity: .8;
+}
+
+
+/* =========================
+   BRANDS
+========================= */
+
+.brands-section {
+    background: #fff;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.brands-grid div {
+    padding: 30px 15px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 14px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.brands-note {
+    text-align: center;
+    margin-top: 25px;
+    color: #777;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-section {
+    background: #f7f5f0;
+}
+
+.project-layout {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.project-image img {
     height: 500px;
-    object-fit: cover;
+    border-radius: 20px;
+}
+
+.project-content p {
+    color: #777;
+    margin: 20px 0;
+}
+
+.project-note {
+    background: #fff;
+    padding: 15px;
+    border-left: 3px solid #c39a52;
+    margin-top: 25px;
+    font-size: 12px;
+    color: #777;
 }
 
 
-/* ================================
+/* =========================
    REVIEWS
-================================ */
+========================= */
 
 .reviews-section {
-    padding: 110px 0;
+    background: #202020;
+    color: #fff;
 }
 
-.review-grid {
+.rating-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 45px 0;
+}
+
+.rating-box > strong {
+    font-size: 70px;
+    font-family: "Montserrat";
+}
+
+.stars {
+    color: #c39a52;
+    letter-spacing: 3px;
+}
+
+.rating-box p {
+    opacity: .6;
+    font-size: 13px;
+}
+
+.reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .review-card {
-    padding: 35px;
-    background: #f7f6f3;
-}
-
-.stars {
-    color: #a27a3b;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 18px;
 }
 
 .review-card p {
-    font-family: "Playfair Display", serif;
-    font-size: 20px;
-    margin-bottom: 30px;
+    margin: 20px 0;
+    color: #ccc;
 }
 
-.review-card strong,
-.review-card span {
+.review-card strong {
     display: block;
 }
 
 .review-card span {
-    color: #888;
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 11px;
+    color: #999;
 }
 
 
-/* ================================
+/* =========================
+   FOUNDER
+========================= */
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.founder-image img {
+    height: 500px;
+    border-radius: 20px;
+}
+
+.founder-content h4 {
+    color: #b58c47;
+    margin: 10px 0 25px;
+}
+
+.founder-content p {
+    color: #777;
+    margin-bottom: 18px;
+}
+
+.text-link {
+    color: #b58c47;
+    font-weight: 600;
+}
+
+
+/* =========================
    CTA
-================================ */
+========================= */
 
 .cta-section {
-    padding: 120px 0;
     text-align: center;
-    background: #1d1d1b;
-    color: white;
-}
-
-.cta-section .eyebrow {
-    color: #c49b5a;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.8),
+            rgba(0,0,0,.8)
+        ),
+        url("../images/hero.jpg") center/cover;
+    color: #fff;
 }
 
 .cta-section h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(45px, 6vw, 75px);
-    line-height: 1.05;
-    margin-bottom: 25px;
+    font-size: clamp(38px, 5vw, 65px);
 }
 
-.cta-section h2 span {
-    color: #c49b5a;
-}
-
-.cta-section p {
-    max-width: 600px;
-    margin: 0 auto 30px;
-    color: #aaa;
+.cta-section > .container > p:not(.section-label) {
+    max-width: 650px;
+    margin: 20px auto;
+    color: #ccc;
 }
 
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
+    margin-top: 30px;
     flex-wrap: wrap;
 }
 
-.btn-outline-light {
-    border: 1px solid white;
-    color: white;
-}
 
-
-/* ================================
+/* =========================
    CONTACT
-================================ */
+========================= */
 
 .contact-section {
-    padding: 120px 0;
+    background: #f7f5f0;
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 90px;
-}
-
-.contact-info h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(40px, 5vw, 60px);
-    line-height: 1.05;
-    margin-bottom: 25px;
+    gap: 80px;
 }
 
 .contact-info > p {
-    color: #666;
-    margin-bottom: 35px;
+    color: #777;
 }
 
-.contact-item {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 22px;
+.contact-details {
+    margin-top: 35px;
 }
 
-.contact-icon {
-    width: 35px;
-    color: #a27a3b;
-    font-size: 20px;
+.contact-details div {
+    margin-bottom: 20px;
 }
 
-.contact-item small {
+.contact-details span {
     display: block;
-    color: #999;
     font-size: 11px;
-    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
 }
 
-.contact-item a,
-.contact-item p {
-    font-size: 14px;
+.contact-details a {
+    font-weight: 600;
+}
+
+.contact-details p {
+    max-width: 450px;
+    margin-top: 3px;
+}
+
+.map-link {
+    color: #b58c47;
+    font-weight: 600;
 }
 
 .contact-form-box {
-    background: #f7f6f3;
+    background: #fff;
     padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.07);
 }
 
 .contact-form-box h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 32px;
+    font-size: 27px;
 }
 
 .contact-form-box > p {
     color: #777;
-    margin-bottom: 30px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .form-group {
@@ -976,110 +901,88 @@ blockquote {
 .form-group label {
     display: block;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 7px;
 }
 
 .form-group input,
-.form-group select,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
-    padding: 13px 15px;
+    padding: 14px;
     border: 1px solid #ddd;
-    background: white;
+    border-radius: 8px;
     outline: none;
-    border-radius: 2px;
+    font-size: 14px;
+    background: #fff;
 }
 
 .form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #a27a3b;
-}
-
-.full-btn {
-    width: 100%;
-    border: none;
-    cursor: pointer;
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #c39a52;
 }
 
 
-/* ================================
+/* =========================
    FOOTER
-================================ */
+========================= */
 
 .footer {
-    background: #171716;
-    color: white;
+    background: #161616;
+    color: #fff;
+    padding-top: 70px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-    gap: 50px;
-    padding: 80px 0;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
 }
 
 .footer-logo {
-    color: white;
-    margin-bottom: 25px;
+    font-family: "Montserrat";
+    font-weight: 800;
+    font-size: 20px;
 }
 
-.footer-brand p {
-    color: #999;
-    font-size: 13px;
-    max-width: 300px;
-    margin-bottom: 12px;
+.footer-logo span {
+    color: #c39a52;
 }
 
-.footer-links h4,
-.footer-contact h4 {
-    color: #c49b5a;
-    margin-bottom: 20px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.footer-grid p {
+    color: #888;
+    margin-top: 15px;
+    max-width: 400px;
 }
 
-.footer-links a,
-.footer-contact a {
+.footer-grid h4 {
+    margin-bottom: 15px;
+}
+
+.footer-grid > div:nth-child(2) a,
+.footer-grid > div:nth-child(3) a {
     display: block;
     color: #aaa;
-    font-size: 13px;
-    margin-bottom: 11px;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover {
-    color: white;
-}
-
-.footer-contact p {
-    color: #999;
-    font-size: 13px;
-    margin-top: 15px;
+    margin-bottom: 7px;
+    font-size: 14px;
 }
 
 .footer-bottom {
-    border-top: 1px solid #333;
-}
-
-.footer-bottom .container {
+    border-top: 1px solid #292929;
+    padding: 20px 4%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    padding: 20px 0;
-}
-
-.footer-bottom p {
     color: #777;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
-/* ================================
+/* =========================
    FLOATING BUTTONS
-================================ */
+========================= */
 
 .floating-buttons {
     position: fixed;
@@ -1094,14 +997,13 @@ blockquote {
 .floating-buttons a {
     width: 52px;
     height: 52px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
 }
 
 .floating-call {
@@ -1109,21 +1011,21 @@ blockquote {
 }
 
 .floating-whatsapp {
-    background: #25d366;
+    background: #198754;
 }
 
 
-/* ================================
+/* =========================
    MOBILE
-================================ */
+========================= */
 
-@media (max-width: 1000px) {
+@media(max-width: 1050px) {
 
-    .nav-menu {
-        gap: 13px;
+    .navbar {
+        gap: 12px;
     }
 
-    .nav-menu a {
+    .navbar a {
         font-size: 11px;
     }
 
@@ -1131,161 +1033,91 @@ blockquote {
         display: none;
     }
 
-    .value-grid,
-    .solutions-grid {
+    .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .value-card:nth-child(2) {
-        border-right: none;
-    }
-
-    .process-grid {
+    .solution-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .brand-list {
+    .brands-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 
 }
 
 
-@media (max-width: 768px) {
+/* =========================
+   TABLET
+========================= */
 
-    .container {
-        width: min(92%, 600px);
+@media(max-width: 800px) {
+
+    section {
+        padding: 75px 0;
     }
 
-    /* Mobile Navigation */
-
-    .nav-container {
-        min-height: 70px;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        display: flex;
+    .navbar {
+        position: absolute;
+        top: 75px;
+        left: 4%;
+        width: 92%;
+        background: #fff;
+        display: none;
         flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: 0.4s;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        align-items: flex-start;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0,0,0,.12);
     }
 
-    .nav-menu.active {
-        max-height: 600px;
+    .navbar.active {
+        display: flex;
     }
 
-    .nav-menu a {
-        padding: 17px 25px;
-        border-bottom: 1px solid #eee;
+    .navbar a {
         font-size: 14px;
+        padding: 7px 0;
     }
 
     .menu-toggle {
         display: block;
     }
 
-    /* Hero */
-
     .hero {
-        min-height: 700px;
-    }
-
-    .hero-content {
-        padding: 60px 0;
+        min-height: 850px;
     }
 
     .hero h1 {
-        font-size: clamp(45px, 13vw, 70px);
+        font-size: 55px;
     }
 
-    .hero p {
-        font-size: 15px;
+    .hero-stats {
+        gap: 30px;
     }
 
-    .hero-bottom {
-        margin-top: 50px;
-        gap: 25px;
-    }
-
-    /* Sections */
-
-    .section-heading {
-        display: block;
-    }
-
-    .section-heading > p {
-        margin-top: 20px;
-    }
-
-    .section-heading h2 {
-        font-size: 45px;
-    }
-
-    .value-section,
-    .products-section,
-    .about-section,
-    .process-section,
-    .trade-section,
-    .solutions-section,
-    .brands-section,
-    .founder-section,
-    .projects-section,
-    .reviews-section,
-    .contact-section {
-        padding: 80px 0;
-    }
-
-    /* Grids */
-
-    .value-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-card.large {
-        grid-row: auto;
+    .value-grid,
+    .reviews-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .about-grid,
     .trade-grid,
-    .founder-grid,
-    .projects-grid,
-    .contact-grid {
+    .project-layout,
+    .contact-grid,
+    .founder-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 45px;
     }
 
-    .about-image img,
-    .founder-photo img {
-        height: 450px;
+    .process-item:nth-child(3) {
+        border-left: none;
     }
 
-    .experience-box {
-        right: 15px;
-    }
-
-    .solutions-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .brand-list {
+    .brands-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .review-grid {
-        grid-template-columns: 1fr;
     }
 
     .footer-grid {
@@ -1295,29 +1127,37 @@ blockquote {
 }
 
 
-@media (max-width: 480px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 550px) {
 
     .container {
         width: 90%;
     }
 
-    .logo-main {
-        font-size: 17px;
+    section {
+        padding: 60px 0;
     }
 
-    .logo-sub {
-        font-size: 11px;
+    .logo strong {
+        font-size: 18px;
     }
 
     .hero {
-        min-height: 680px;
+        min-height: 780px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
     }
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 46px;
     }
 
-    .hero p {
+    .hero-text {
         font-size: 14px;
     }
 
@@ -1330,63 +1170,50 @@ blockquote {
         width: 100%;
     }
 
-    .hero-bottom {
+    .hero-stats {
+        margin-top: 40px;
         justify-content: space-between;
         gap: 10px;
     }
 
-    .hero-bottom strong {
-        font-size: 20px;
+    .hero-stats strong {
+        font-size: 24px;
     }
 
-    .section-heading h2,
-    .about-content h2,
-    .trade-section h2,
-    .founder-content h2,
-    .projects-content h2,
-    .contact-info h2 {
-        font-size: 40px;
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 20px;
     }
 
     .value-grid,
-    .solutions-grid,
+    .product-grid,
+    .solution-grid,
+    .reviews-grid,
     .process-grid {
         grid-template-columns: 1fr;
     }
 
-    .value-card {
-        border-right: none;
+    .process-item {
+        border-left: none;
         border-bottom: 1px solid #ddd;
     }
 
-    .value-card:last-child {
-        border-bottom: none;
-    }
-
-    .product-content {
-        padding: 25px;
-    }
-
-    .product-content h3 {
-        font-size: 27px;
-    }
-
-    .about-points {
-        grid-template-columns: 1fr;
-    }
-
-    .brand-list {
+    .brands-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .brand-list div {
-        min-height: 80px;
-        font-size: 11px;
+    .about-image img,
+    .founder-image img,
+    .project-image img {
+        height: 350px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .experience-box {
+        right: 10px;
+        bottom: 10px;
     }
 
     .contact-form-box {
@@ -1398,13 +1225,18 @@ blockquote {
         gap: 35px;
     }
 
-    .footer-bottom .container {
+    .footer-bottom {
         flex-direction: column;
     }
 
     .floating-buttons {
-        right: 12px;
-        bottom: 12px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .floating-buttons a {
+        width: 48px;
+        height: 48px;
     }
 
 }
